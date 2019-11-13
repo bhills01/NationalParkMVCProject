@@ -74,6 +74,16 @@ a {
     font-size: 25px;
 }
 
+.weather_image > img {
+    display: block;
+    width: 50px;
+}
+
+.today_forecast {
+    display: block;
+    width: 300px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */

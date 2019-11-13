@@ -35,10 +35,12 @@ namespace Capstone.Web.DAL
                 SqlCommand cmd = new SqlCommand(@"SELECT *
                                         FROM park p
                                         JOIN weather w ON w.parkCode = p.parkCode
-                                        WHERE p.parkCode = 'CVNP'
+                                        WHERE p.parkCode = @parkCode
                                         ORDER BY w.fiveDayForecastValue", conn);
 
-                SqlDataReader reader = cmd.ExecuteReader();
+                cmd.Parameters.AddWithValue("@parkCode", parkCode);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {

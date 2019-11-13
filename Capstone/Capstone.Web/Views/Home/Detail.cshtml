@@ -26,44 +26,44 @@
 
 <div id="forecast">
     <p>Today:</p>
-    <img src="~/images/@(Model.Weather.ElementAt(0).Forecast).png" />
+    <img class="today_forecast"src="~/images/@(Model.Weather.ElementAt(0).Forecast).png" />
+    <p>@Model.Weather.ElementAt(0).Forecast</p>
     <p> High: @Model.Weather.ElementAt(0).High</p>
     <p> Low: @Model.Weather.ElementAt(0).Low</p>
     @if (Model.Weather.ElementAt(0).Forecast == "snow")
     {
-        <p>Expecting snow! Be sure to bring snow shoes!</p>
+        <p>WEATHER ALERT: Expecting snow! Be sure to bring snow shoes!</p>
     }
     @if (Model.Weather.ElementAt(0).Forecast == "rain")
     {
-        <p>Rain's a'comin'! Best pack that rain gear and waterproof shoes!</p>
+        <p>WEATHER ALERT: Rain's a'comin'! Best pack that rain gear and waterproof shoes!</p>
     }
     @if (Model.Weather.ElementAt(0).Forecast == "thunderstorms")
     {
-        <p>God's angry, hurling bolts of electricity. Seek shelter and avoid hiking on exposed ridges.</p>
+        <p>WEATHER ALERT: God's angry, hurling bolts of electricity. Seek shelter and avoid hiking on exposed ridges.</p>
     }
     @if (Model.Weather.ElementAt(0).Forecast == "sunny")
     {
-        <p>Skin cancer kills! Remember your hat and sunscreen!</p>
+        <p>WEATHER ALERT: Skin cancer kills! Remember your hat and sunscreen!</p>
     }
     @if (Model.Weather.ElementAt(0).High > 75)
     {
-        <p>It's a hot one! Be sure to bring an extra gallon of water.</p>
+        <p>WEATHER ALERT: It's a hot one! Be sure to bring an extra gallon of water.</p>
     }
     @if (((Model.Weather.ElementAt(0).High) - (Model.Weather.ElementAt(0).Low)) > 20)
     {
-        <p>It's madness out there! Dress in breathable layers... or you'll regret it.</p>
+        <p>WEATHER ALERT: It's madness out there! Dress in breathable layers... or you'll regret it.</p>
     }
     @if (Model.Weather.ElementAt(0).Low < 20)
     {
-        <p>Oh boy! It's chilly out there. Frigid temperatures can kill you and your family. Best to forget the park and watch a movie or something.</p>
+        <p>WEATHER ALERT: It's chilly out there. Frigid temperatures can kill you and your family. Best to forget the park and watch a movie or something.</p>
     }
+        @for (int i = 1; i < 5; i++)
+         {
+            <div class="weather_image">
+                <img src="~/images/@(Model.Weather.ElementAt(i).Forecast).png" />
+            </div>
+            <p>@Model.Weather.ElementAt(i).High</p>
+            <p>@Model.Weather.ElementAt(i).Low</p>
+         }
 </div>
-@*@for(int i = 1; i < 5; i++)
-{
-<div class="weather_image">
-    <img src="~/images/@(Model.Weather.ElementAt(i).Forecast).png" />
-</div>
-    <p>@Model.Weather.ElementAt(i).High</p>
-    <p>@Model.Weather.ElementAt(i).Low</p>
-    <p>@Model.Weather.ElementAt(i).Forecast</p>
-}*@
