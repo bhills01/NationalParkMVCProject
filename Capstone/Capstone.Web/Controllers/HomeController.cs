@@ -12,10 +12,12 @@ namespace Capstone.Web.Controllers
     public class HomeController : Controller
     {
         private IParksSQLDAO parkDAO;
+        private IWeatherSQLDAO weatherSQLDAO;
 
-        public HomeController(IParksSQLDAO parkDAO)
+        public HomeController(IParksSQLDAO parkDAO, IWeatherSQLDAO weatherSQLDAO)
         {
             this.parkDAO = parkDAO;
+            this.weatherSQLDAO = weatherSQLDAO;
         }
         public IActionResult Index()
         {
@@ -24,9 +26,12 @@ namespace Capstone.Web.Controllers
         }
         public IActionResult Detail(string parkCode)
         {
-            Park newPark = new Park();
-            newPark = parkDAO.GetParksByCode(parkCode);
-            return View(newPark);
+            Park park = new Park();
+            park = parkDAO.GetParksByCode(parkCode);
+            IList<Weather> weather;
+            weather = weatherSQLDAO.GetWeather(parkCode);
+            ParkVM parkView = new ParkVM(park, weather);
+            return View(parkView);
         }
 
       

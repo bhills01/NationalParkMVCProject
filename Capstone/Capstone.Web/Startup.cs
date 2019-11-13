@@ -39,7 +39,7 @@ namespace Capstone.Web
             string connectionString = Configuration.GetConnectionString("NPGeek");
 
             services.AddScoped<IParksSQLDAO, ParksSQLDAO>(d => new ParksSQLDAO(connectionString));
-
+            services.AddScoped<IWeatherSQLDAO, WeatherSQLDAO>(d => new WeatherSQLDAO(connectionString));
         }
 
 
