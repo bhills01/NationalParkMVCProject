@@ -69,6 +69,11 @@ a {
     grid-area: desc;
 }
 
+#forecast > p{
+    color: red;
+    font-size: 25px;
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
