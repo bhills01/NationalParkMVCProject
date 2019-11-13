@@ -41,7 +41,6 @@ body {
     grid-template-areas: 
         "pic name" 
         "pic desc";
-    margin-bottom: 20px;
 }
 
 .park_image{
@@ -49,9 +48,21 @@ body {
     width: 25px;
 }
 
-.park_name{
+.park_name {
     grid-area: name;
     height: auto;
+    font-weight: bold;
+    font-size: 25px;
+    padding-top: 1px;
+    text-shadow: 2px 2px 5px #29bb43;
+}
+
+.park_name:hover {
+    color: forestgreen;
+}
+
+a {
+    color: black;
 }
 
 .park_desc{

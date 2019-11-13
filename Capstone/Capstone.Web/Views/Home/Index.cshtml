@@ -6,11 +6,11 @@
 @foreach (Park park in Model)
  {
     <div class="grid_class">
-        <div class="park_image">
-            <img src="~/images/@(park.ParkCode).jpg" />
-        </div>
-        <p class="park_name">@park.ParkName</p>
-        <p class="park_desc">@park.ParkDescription</p>
-    </div>
 
+                <div class="park_image">
+                    <a asp-controller="Home" asp-action="Index"><img src="~/images/@(park.ParkCode).jpg" /></a>
+                </div>
+                <a asp-controller="Home" asp-action="Index"><p class="park_name">@park.ParkName</p></a>
+                <p class="park_desc">@park.ParkDescription</p>
+    </div> 
  }
