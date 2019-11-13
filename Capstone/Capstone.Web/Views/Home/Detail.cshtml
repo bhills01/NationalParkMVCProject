@@ -1,0 +1,15 @@
+﻿@model Park
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div class="grid_class">
+
+    <div class="park_image">
+        <a asp-controller="Home" asp-action="Index"><img src="~/images/@(Model.ParkCode).jpg" /></a>
+    </div>
+    <a asp-controller="Home" asp-action="Index"><p class="park_name">@Model.ParkName</p></a>
+    <p class="park_desc">@Model.ParkDescription</p>
+</div> 

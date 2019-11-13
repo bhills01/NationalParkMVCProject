@@ -8,9 +8,9 @@
     <div class="grid_class">
 
                 <div class="park_image">
-                    <a asp-controller="Home" asp-action="Index"><img src="~/images/@(park.ParkCode).jpg" /></a>
+                    <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><img src="~/images/@(park.ParkCode).jpg" /></a>
                 </div>
-                <a asp-controller="Home" asp-action="Index"><p class="park_name">@park.ParkName</p></a>
+                <a asp-controller="Home" asp-action="Detail" asp-route-parkCode="@park.ParkCode"><p class="park_name">@park.ParkName</p></a>
                 <p class="park_desc">@park.ParkDescription</p>
     </div> 
  }

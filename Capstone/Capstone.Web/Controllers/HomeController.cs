@@ -22,6 +22,12 @@ namespace Capstone.Web.Controllers
             IList<Park> parks = parkDAO.GetParks();
             return View(parks);
         }
+        public IActionResult Detail(string parkCode)
+        {
+            Park newPark = new Park();
+            newPark = parkDAO.GetParksByCode(parkCode);
+            return View(newPark);
+        }
 
       
 

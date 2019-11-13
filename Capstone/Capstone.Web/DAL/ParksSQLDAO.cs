@@ -52,5 +52,47 @@ namespace Capstone.Web.DAL
             }
             return parks;
         }
+
+        public Park GetParksByCode(string parkCode)
+        {
+            Park park = new Park();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                                      
+                    SqlCommand cmd = new SqlCommand(@"SELECT * FROM park where parkCode = @parkCode", conn);
+
+                    cmd.Parameters.AddWithValue("@parkCode", parkCode);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        
+                        park.ParkCode = Convert.ToString(reader["parkCode"]);
+                        park.ParkName = Convert.ToString(reader["parkName"]);
+                        park.ParkDescription = Convert.ToString(reader["parkDescription"]);
+                        park.State = Convert.ToString(reader["state"]);
+                        park.Acreage = Convert.ToInt32(reader["acreage"]);
+                        park.Elevation = Convert.ToInt32(reader["elevationInFeet"]);
+                        park.MilesOfTrail = Convert.ToDouble(reader["milesOfTrail"]);
+                        park.NumberOfCampsites = Convert.ToInt32(reader["numberOfCampsites"]);
+                        park.Climate = Convert.ToString(reader["climate"]);
+                        park.YearFounded = Convert.ToInt32(reader["yearFounded"]);
+                        park.AnnualVisitorCount = Convert.ToInt32(reader["annualVisitorCount"]);
+                        park.InspirationalQuote = Convert.ToString(reader["inspirationalQuote"]);
+                        park.InspirationalQuoteSource = Convert.ToString(reader["inspirationalQuoteSource"]);
+                        park.EntryFee = Convert.ToDecimal(reader["entryFee"]);
+                        park.NumberOfAnimalSpecies = Convert.ToInt32(reader["numberOfAnimalSpecies"]);
+                    }
+                }
+            }
+            finally
+            {
+            }
+            return park;
+        }
     }
 }
