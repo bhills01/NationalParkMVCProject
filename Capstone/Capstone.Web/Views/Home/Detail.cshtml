@@ -23,13 +23,18 @@
 <p>@Model.Park.ParkDescription</p>
 <p>@Model.Park.EntryFee</p>
 <p>@Model.Park.NumberOfAnimalSpecies</p>
-
+<form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="F">
+    <input type="submit" value="Fahrenheit" />
+</form>
+<form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="C">
+    <input type="submit" value="Celcius" />
+</form>
 <div id="forecast">
     <p>Today:</p>
     <img class="today_forecast"src="~/images/@(Model.Weather.ElementAt(0).Forecast).png" />
     <p>@Model.Weather.ElementAt(0).Forecast</p>
-    <p> High: @Model.Weather.ElementAt(0).High</p>
-    <p> Low: @Model.Weather.ElementAt(0).Low</p>
+    <p> High: @((int)Model.Weather.ElementAt(0).GetHigh(Model.UnitPref)) @Model.UnitPref</p>
+    <p> Low: @((int)Model.Weather.ElementAt(0).GetLow(Model.UnitPref)) @Model.UnitPref</p>
     @if (Model.Weather.ElementAt(0).Forecast == "snow")
     {
         <p>WEATHER ALERT: Expecting snow! Be sure to bring snow shoes!</p>
@@ -63,7 +68,7 @@
             <div class="weather_image">
                 <img src="~/images/@(Model.Weather.ElementAt(i).Forecast).png" />
             </div>
-            <p>@Model.Weather.ElementAt(i).High</p>
-            <p>@Model.Weather.ElementAt(i).Low</p>
+            <p>@((int)Model.Weather.ElementAt(i).GetHigh(Model.UnitPref)) @Model.UnitPref</p>
+            <p>@((int)Model.Weather.ElementAt(i).GetLow(Model.UnitPref)) @Model.UnitPref</p>
          }
 </div>

@@ -27,12 +27,37 @@ namespace Capstone.Web.DAL
                 cmd.Parameters.AddWithValue("@email", survey.Email);
                 cmd.Parameters.AddWithValue("@state", survey.StateOfResidence);
                 cmd.Parameters.AddWithValue("@activity", survey.ActivityLevel);
+                cmd.ExecuteNonQuery();
             }
 
         }
-        public IList<Survey> GetAllSurveys()
+        public IList<SurveyResult> GetAllSurveys()
         {
-            return null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                SqlCommand cmd = new SqlCommand(@"
+                     SELECT p.parkName, sr.parkCode, COUNT(sr.parkcode) as votes
+                     FROM survey_result sr
+                     JOIN park p ON p.parkCode = sr.parkCode
+                     GROUP BY p.parkName, sr.parkCode
+                     Order by votes desc", connection);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                List<SurveyResult> surveyResults = new List<SurveyResult>();
+
+                while (reader.Read())
+                {
+                    SurveyResult survey = new SurveyResult();
+                    survey.ParkName = Convert.ToString(reader["parkName"]);
+                    survey.ParkCode = Convert.ToString(reader["parkCode"]);
+                    survey.Votes = Convert.ToInt32(reader["votes"]);
+                    surveyResults.Add(survey);
+                }
+                return surveyResults;
+            }
         }
     }
 }

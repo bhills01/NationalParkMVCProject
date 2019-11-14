@@ -31,6 +31,16 @@ namespace Capstone.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            // TODO 01a: Demo Session setup.
+            // Enable session for the MVC Application
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                // Sets session expiration to 20 minuates
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;
+            });
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -60,6 +70,9 @@ namespace Capstone.Web
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            // TODO 01b: Demo Session setup. This must go BEFORE UseMvc!
+            app.UseSession();
 
             app.UseMvc(routes =>
             {

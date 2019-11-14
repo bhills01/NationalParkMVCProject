@@ -9,7 +9,7 @@ namespace Capstone.Web.DAL
     public interface ISurveySQLDAO
     {
         void SaveSurvey(Survey survey);
-        IList<Survey> GetAllSurveys();
+        IList<SurveyResult> GetAllSurveys();
     }
 
 }

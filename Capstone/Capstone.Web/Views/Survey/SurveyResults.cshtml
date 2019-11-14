@@ -1,0 +1,27 @@
+﻿@model IList<SurveyResult>
+@{
+    ViewData["Title"] = "SurveyResults";
+}
+
+<h2>SurveyResults</h2>
+
+<img src="~/images/approval cat.jpg" />
+
+<p>WHATEVER THANK YOU MESSAGE WE GO WITH WILL APPEAR HERE.</p>
+
+<table>
+    @foreach (SurveyResult survey in Model)
+    {
+        <tr>
+            <td>
+                <img src=~/images/@(survey.ParkCode).jpg />
+            </td>
+            <td>
+                <span>@survey.ParkName</span>
+            </td>
+            <td>
+                <span>Votes: @survey.Votes</span>
+            </td>
+        </tr>
+    }
+</table>

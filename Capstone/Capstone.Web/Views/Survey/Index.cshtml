@@ -9,26 +9,33 @@
         <table>
             <tr>
                 <td>
-                    <span id="selectInstruction">Favorite National Park</span>
+                    <label asp-for="@Model.ParkCode">Favorite National Park</label>
                 </td>
                 <td>
                     <select asp-for="@Model.ParkCode">
-                        @*@foreach (Park park in Model)
-                        {
-                            <option value="@park.ParkCode">@park.ParkName</option>
-                        }*@
                         <option value="CVNP">Cuyahoga Valley National Park</option>
+                        <option value="ENP">Everglades National Park</option>
+                        <option value="GCNP">Grand Canyon National Park</option>
+                        <option value="GNP">Glacier National Park</option>
+                        <option value="GSMNP">Great Smokey Mountains National Park</option>
+                        <option value="GTNP">Grand Teton National Park</option>
+                        <option value="MRNP">Mount Ranier National Park</option>
+                        <option value="RMNP">Rockey Mountain National Park</option>
+                        <option value="YNP">Yellowstone National Park</option>
+                        <option value="YNP2">Yosemite National Park</option>
                     </select>
                 </td>
             </tr>
-            
-            @*<span id="emailInstruction">Your email</span>
-            <input name="yourEmail" type="text">
-            <br />*@
             <tr>
                 <td>
-                    <span id="stateOfResidenceInstruction">State of Residence</span>
-
+                    <label asp-for="@Model.Email">You email:</label>
+                </td>
+                <td>
+                    <input type="text" asp-for="@Model.Email" />
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="@Model.StateOfResidence">State of Residence:</label>
                     <select asp-for="@Model.StateOfResidence">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -82,15 +89,25 @@
                         <option value="WI">Wisconsin</option>
                         <option value="WY">Wyoming</option>
                     </select>
-
                 </td>
             </tr>
-            @*<br />
-            <span id="activityLevelInstruction">Activity Level</span>
-            <p><input type="radio" name="activityLevel" value="inactive"> Inactive </p>
-            <p><input type="radio" name="activityLevel" value="sedentary"> Sedentary </p>
-            <p><input type="radio" name="activityLevel" value="active"> Active </p>
-            <p><input type="radio" name="activityLevel" value="extremelyActive"> Extremely Active </p>*@
+            <tr>
+                <td>
+                    <label asp-for="@Model.ActivityLevel">Activity Level</label>
+                </td>
+                <td>
+                    <input type="radio" asp-for="@Model.ActivityLevel" value="inactive"/><span>Inactive</span>
+                </td>
+                <td>
+                    <input type="radio" asp-for="@Model.ActivityLevel" value="sedentary" /><span>Sedentary</span>
+                </td>
+                <td>
+                    <input type="radio" asp-for="@Model.ActivityLevel" value="active" /><span>Active</span>
+                </td>
+                <td>
+                    <input type="radio" asp-for="@Model.ActivityLevel" value="extremely active" /><span>Extremely Active</span>
+                </td>
+            </tr>
             <tr>
                 <td>
                     <input type="submit">

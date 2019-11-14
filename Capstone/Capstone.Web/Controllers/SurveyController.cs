@@ -12,6 +12,7 @@ namespace Capstone.Web.Controllers
     {
         private IParksSQLDAO parkDAO;
         private ISurveySQLDAO surveyDAO;
+        
 
         public SurveyController(IParksSQLDAO parkDAO, ISurveySQLDAO surveyDAO)
         {
@@ -20,19 +21,19 @@ namespace Capstone.Web.Controllers
         }
         public IActionResult Index()
         {
-            //IList<Park> parks = parkDAO.GetParks();
             Survey newSurvey = new Survey();
             return View(newSurvey);
         }
         public IActionResult MakeNewSurvey(Survey survey)
         {
-            //Survey newSurvey = new Survey();
-            //newSurvey.ParkCode = parkCode;
-            //newSurvey.Email = email;
-            //newSurvey.StateOfResidence = state;
-            //newSurvey.ActivityLevel = activity;
             surveyDAO.SaveSurvey(survey);
-            return RedirectToAction("Index");
+            return RedirectToAction("SurveyResults");
+        }
+
+        public IActionResult SurveyResults()
+        {
+            IList<SurveyResult> surveys = surveyDAO.GetAllSurveys();
+            return View(surveys);
         }
     }
 }

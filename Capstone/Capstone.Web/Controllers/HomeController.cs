@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Capstone.Web.Models;
 using Capstone.Web.DAL;
+using Microsoft.AspNetCore.Http;
 
 namespace Capstone.Web.Controllers
 {
@@ -24,18 +25,32 @@ namespace Capstone.Web.Controllers
             IList<Park> parks = parkDAO.GetParks();
             return View(parks);
         }
-        public IActionResult Detail(string parkCode)
+        public IActionResult Detail(string parkCode, string unitPref)
         {
+
+            if (unitPref == null || unitPref == "F")
+            {
+                HttpContext.Session.SetString("UnitPref", "F");
+
+                unitPref = "F";
+            }
+            else
+            {
+                HttpContext.Session.SetString("UnitPref", "C");
+                unitPref = "C";
+            }
+
             Park park = new Park();
             park = parkDAO.GetParksByCode(parkCode);
             IList<Weather> weather;
             weather = weatherSQLDAO.GetWeather(parkCode);
             ParkVM parkView = new ParkVM(park, weather);
+
+
+            parkView.UnitPref = unitPref;
             return View(parkView);
         }
-
-      
-
+    
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
