@@ -20,17 +20,18 @@ namespace Capstone.Web.Controllers
         }
         public IActionResult Index()
         {
-            IList<Park> parks = parkDAO.GetParks();
-            return View(parks);
-        }
-        public IActionResult MakeNewSurvey(string parkCode, string email, string state, string activity)
-        {
+            //IList<Park> parks = parkDAO.GetParks();
             Survey newSurvey = new Survey();
-            newSurvey.ParkCode = parkCode;
-            newSurvey.Email = email;
-            newSurvey.StateOfResidence = state;
-            newSurvey.ActivityLevel = activity;
-            surveyDAO.SaveSurvey(newSurvey);
+            return View(newSurvey);
+        }
+        public IActionResult MakeNewSurvey(Survey survey)
+        {
+            //Survey newSurvey = new Survey();
+            //newSurvey.ParkCode = parkCode;
+            //newSurvey.Email = email;
+            //newSurvey.StateOfResidence = state;
+            //newSurvey.ActivityLevel = activity;
+            surveyDAO.SaveSurvey(survey);
             return RedirectToAction("Index");
         }
     }
