@@ -5,7 +5,7 @@
 
     <h2>Index</h2>
     <p>If you could take a moment to complete our brief survey, we'd very much appreciate it!</p>
-    <form action="">
+    <form asp-action="MakeNewSurvey">
         <span id="selectInstruction">Favorite National Park</span>
         <select name="favoritePark" id="favoriteParkDropDown">
             @foreach (Park park in Model)

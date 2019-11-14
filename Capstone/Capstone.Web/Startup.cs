@@ -40,6 +40,7 @@ namespace Capstone.Web
 
             services.AddScoped<IParksSQLDAO, ParksSQLDAO>(d => new ParksSQLDAO(connectionString));
             services.AddScoped<IWeatherSQLDAO, WeatherSQLDAO>(d => new WeatherSQLDAO(connectionString));
+            services.AddScoped<ISurveySQLDAO, SurveySQLDAO>(d => new SurveySQLDAO(connectionString));
         }
 
 
