@@ -3,6 +3,12 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/1512c733-fb36-4be2-be1d-352f507aa1f6-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+
 }
 
 /* Wrapping element */
@@ -31,6 +37,9 @@ body {
 .logo {
     display: block;
     width: 50%;
+    background-color: black;
+    opacity: 0.7;
+    
 
 }
 
@@ -41,6 +50,10 @@ body {
     grid-template-areas: 
         "pic name" 
         "pic desc";
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    opacity: .9;
 }
 
 .park_image{
@@ -53,6 +66,8 @@ body {
         height: 330px;
         border: 5px solid black;
         border-radius: 20px;
+        margin-top: 15px;
+        margin-left: 10px;
     }
 
     .park_name {
@@ -83,10 +98,6 @@ a {
     grid-area: desc;
 }
 
-#forecast > p{
-    color: red;
-    font-size: 25px;
-}
 
 .weather_image > img {
     display: block;
@@ -197,9 +208,126 @@ a {
     margin: 5px;
 }
 
-.today_forecast {
+#today_image {
+    grid-area: today_pic;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+
+}
+
+    #today_image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+#today_temp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "t_high t_low";
+    grid-area: today_temp;
+}
+
+#today_high {
+    grid-area: t_high;
+    border-left: 5px solid black;
+}
+
+#today_low {
+    grid-area: t_low;
+    border-right: 5px solid black;
+}
+
+today_message{
+    grid-area: message;
     display: block;
-    width: 300px;
+    text-align:center;
+    font-size: 50px;
+}
+
+#today_forecast {
+    grid-area: today_forecast;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+
+
+#weather_card1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "message message" "card_pic card_pic" "high low";
+    grid-area: weather_card1;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+#weather_card2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "message message" "card_pic card_pic" "high low";
+    grid-area: weather_card2;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+#weather_card3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "message message" "card_pic card_pic" "high low";
+    grid-area: weather_card3;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+#weather_card4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "message message" "card_pic card_pic" "high low";
+    grid-area: weather_card4;
+    border: 5px solid black;
+    border-radius: 20px;
+}
+
+#high {
+    grid-area: high;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#low {
+    grid-area: low;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#weather_image {
+    grid-area: card_pic;
+}
+#weather_image img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+#forecast {
+    display: grid;
+    grid-template-columns: 25% 18% 18% 18% 18%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "today_pic weather_card1 weather_card2 weather_card3 weather_card4" "today_pic weather_card1 weather_card2 weather_card3 weather_card4" "today_temp weather_card1 weather_card2 weather_card3 weather_card4" "today_forecast . . . .";
+    grid-column-gap: 20px;
 }
 
 #formGrid {
