@@ -28,16 +28,15 @@ namespace Capstone.Web.Controllers
         public IActionResult Detail(string parkCode, string unitPref)
         {
 
-            if (unitPref == null || unitPref == "F")
+            if (unitPref == null)  
             {
-                HttpContext.Session.SetString("UnitPref", "F");
-
-                unitPref = "F";
+                string sessionString = HttpContext.Session.GetString("UnitPref");
+                unitPref = sessionString == null ? "F" : sessionString;
             }
             else
             {
-                HttpContext.Session.SetString("UnitPref", "C");
-                unitPref = "C";
+                HttpContext.Session.SetString("UnitPref", unitPref);
+
             }
 
             Park park = new Park();
@@ -45,7 +44,6 @@ namespace Capstone.Web.Controllers
             IList<Weather> weather;
             weather = weatherSQLDAO.GetWeather(parkCode);
             ParkVM parkView = new ParkVM(park, weather);
-
 
             parkView.UnitPref = unitPref;
             return View(parkView);
