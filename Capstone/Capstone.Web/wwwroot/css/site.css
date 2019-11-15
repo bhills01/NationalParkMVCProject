@@ -48,13 +48,27 @@ body {
     width: 25px;
 }
 
-.park_name {
-    grid-area: name;
-    height: auto;
-    font-weight: bold;
-    font-size: 25px;
-    padding-top: 1px;
-    text-shadow: 2px 2px 5px #29bb43;
+    .park_image img {
+        width: 500px;
+        height: 330px;
+        border: 5px solid black;
+        border-radius: 20px;
+    }
+
+    .park_name {
+        grid-area: name;
+        height: auto;
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 1px;
+        text-shadow: 2px 2px 5px #29bb43;
+    }
+#survey_results img{
+    width: 500px;
+    height: 330px;
+    border: 5px solid black;
+    border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .park_name:hover {
@@ -80,14 +94,15 @@ a {
 }
 
 #parkPicDiv {
-    width: 300px;
-    overflow:hidden;
-    margin:0;
+
 }
 
 .parkPic {
-    display: block;
-    width:100%;
+    width: 1200px; /* width of container */
+    height: 500px; /* height of container */
+    object-fit: cover;
+    border: 5px solid black;
+    border-radius: 20px;
 }
 
 #selectInstruction {
