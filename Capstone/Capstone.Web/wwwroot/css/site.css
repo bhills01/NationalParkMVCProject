@@ -37,6 +37,9 @@ body {
 .logo {
     display: block;
     width: 50%;
+    background-color: black;
+    opacity: 0.7;
+    
 
 }
 
@@ -47,6 +50,10 @@ body {
     grid-template-areas: 
         "pic name" 
         "pic desc";
+    background-color: aliceblue;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    opacity: .9;
 }
 
 .park_image{
@@ -59,6 +66,8 @@ body {
         height: 330px;
         border: 5px solid black;
         border-radius: 20px;
+        margin-top: 15px;
+        margin-left: 10px;
     }
 
     .park_name {
@@ -146,7 +155,6 @@ a {
     grid-template-areas: "t_high t_low";
     grid-area: today_temp;
 }
-border: 5px solid black;
 
 #today_high {
     grid-area: t_high;
