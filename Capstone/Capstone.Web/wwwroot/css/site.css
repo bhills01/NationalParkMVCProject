@@ -79,6 +79,41 @@ a {
     width: 50px;
 }
 
+#parkPicDiv {
+    width: 300px;
+    overflow:hidden;
+    margin:0;
+}
+
+.parkPic {
+    display: block;
+    width:100%;
+}
+
+#selectInstruction {
+    margin-bottom: 5rem;
+}
+
+#surveyInstruction {
+    margin-bottom: 5rem;
+}
+
+#emailInstruction {
+    margin-bottom: 5rem;
+}
+
+#stateOfResidenceInstruction {
+    margin-bottom: 5rem;
+}
+
+#activityLevelInstruction {
+    margin-bottom: 5rem;
+}
+
+.parkOptions {
+    margin: 5px;
+}
+
 .today_forecast {
     display: block;
     width: 300px;
