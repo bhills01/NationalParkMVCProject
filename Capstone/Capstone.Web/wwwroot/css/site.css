@@ -93,9 +93,77 @@ a {
     width: 50px;
 }
 
-#parkPicDiv {
-
+#blurbDiv {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border: 5px solid black;
 }
+
+#buttonsDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "far cel";
+    margin-bottom: 50px;
+    align-content: center;
+    align-items: center;
+}
+
+#buttonFForm {
+    grid-area: far;
+    position: relative;
+}
+
+#buttonCForm {
+    grid-area: cel;
+    position: relative;
+}
+
+#buttonF {
+    margin-left: 50%;
+}
+
+#buttonC {
+    margin-right: 50%;
+}
+
+.tempTypeButton {
+    border-radius: 50%;
+    min-width: 150px;
+    min-height: 100px;
+    padding: 15px;
+    background-image: linear-gradient(to bottom right, #adebeb, #0099cc);
+    color: #ffeee6;
+    text-shadow: 3px 3px 2px 3px #ccc;
+    font-size: 2.25rem;
+    font-family: Verdana,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-shadow: 3px 3px 5px 6px #666;
+}
+
+    .tempTypeButton:hover {
+        border-radius: 50%;
+        min-width: 150px;
+        min-height: 100px;
+        padding: 15px;
+        background-image: linear-gradient(to bottom right, #ffd480, #cc0000);
+        color: #ffeee6;
+        text-shadow: 3px 3px 2px 3px #ccc;
+        font-size: 2.25rem;
+        font-family: Verdana,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        box-shadow: 3px 3px 5px 6px #666;
+    }
+
+    .tempTypeButton:active {
+        border-radius: 50%;
+        min-width: 150px;
+        min-height: 100px;
+        padding: 15px;
+        background-image: linear-gradient(to bottom right, #adebeb, #0099cc);
+        color: #ffeee6;
+        text-shadow: 3px 3px 2px 3px #ccc;
+        font-size: 2.25rem;
+        font-family: Verdana,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transform: translateY(4px);
+    }
 
 .parkPic {
     width: 1200px; /* width of container */
@@ -132,6 +200,72 @@ a {
 .today_forecast {
     display: block;
     width: 300px;
+}
+
+#formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "favs favs . favsChoices favsChoices ." 
+        "emailL emailL . emailArea emailArea ." 
+        "resState resState . stateChoices stateChoices ." 
+        "act act act act act act" 
+        ". . sub sub . .";
+}
+
+
+#parkCodeLabel {
+    grid-area: favs;
+}
+
+#parkCode {
+    grid-area: favsChoices;
+}
+
+#YourEmailLabel {
+    grid-area: emailL;
+}
+
+#YourEmailHere {
+    grid-area: emailArea;
+}
+
+#stateOfResLabel {
+    grid-area: resState;
+}
+
+#stateOfRes {
+    grid-area: stateChoices;
+}
+
+#allTheActivityStuff {
+    grid-area: act;
+    display: grid;
+    grid-template-areas: "one one two three four five"
+}
+
+#activityLevelInstruction {
+    grid-area: one;
+}
+
+#inactiveYo {
+    grid-area: two;
+}
+
+#sedentaryYo {
+    grid-area: three;
+}
+
+#activeYo {
+    grid-area: four;
+}
+
+#extremelyActiveYo {
+    grid-area: five;
+}
+
+#submitB {
+    grid-area: sub;
 }
 
 /* Hide/rearrange for smaller screens */

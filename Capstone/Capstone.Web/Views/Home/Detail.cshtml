@@ -9,26 +9,30 @@
 <div id="parkPicDiv">
     <img class="parkPic" src="~/images/@(Model.Park.ParkCode).jpg" />
 </div>
-Located in <span>@Model.Park.State</span> this is a wonderful park, covering 
-<span>@Model.Park.Acreage</span> majestic acres. It stands at an elevation of 
-<span>@Model.Park.Elevation</span>, or 
-<span>@Model.Park.ElevationFeet</span> feet relative to sea level. This park contains
-<span>@Model.Park.MilesOfTrail</span> glorious miles of trail. Campers can set up their tents in one of the
-<span>@Model.Park.NumberOfCampsites</span> splendid campsites available here. Expect to enjoy a 
-<span>@Model.Park.Climate</span> climate while visiting this park. History buffs will be pleased to know it was founded in
-<span>@Model.Park.YearFounded</span>, a fine year. Perhaps that's why approximately
-<span>@Model.Park.AnnualVisitorCount</span> visitors grace this park with their presence yearly. You know what they say,
-<span>@Model.Park.InspirationalQuote</span>, and by "they" we mean the one and only
-<span>@Model.Park.InspirationalQuoteSource</span>. Still not convinced as to why you should make this park your next vacation destination? Well...
-<span>@Model.Park.ParkDescription</span> Expect to pay
-<span>@Model.Park.EntryFee</span> to enter. And be mindful of the 
-<span>@Model.Park.NumberOfAnimalSpecies</span> animal species that call this place home!
-<form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="F">
-    <input type="submit" value="Fahrenheit" />
-</form>
-<form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="C">
-    <input type="submit" value="Celcius" />
-</form>
+<div id="blurbDiv">
+    Located in <span>@Model.Park.State</span>, this is a wonderful park, covering
+    <span>@Model.Park.Acreage</span> majestic acres. It stands at an elevation of
+    <span>@Model.Park.Elevation</span>, or
+    <span>@Model.Park.ElevationFeet</span> feet relative to sea level. This park contains
+    <span>@Model.Park.MilesOfTrail</span> glorious miles of trail. Campers can set up their tents in one of the
+    <span>@Model.Park.NumberOfCampsites</span> splendid campsites available here. Expect to enjoy a
+    <span>@Model.Park.Climate</span> climate while visiting this park. History buffs will be pleased to know it was founded in
+    <span>@Model.Park.YearFounded</span>, a fine year. Perhaps that's why approximately
+    <span>@Model.Park.AnnualVisitorCount</span> visitors grace this park with their presence yearly. You know what they say,
+    <span><em>"@Model.Park.InspirationalQuote"</em></span>... and by "they" we mean the one and only
+    <span>@Model.Park.InspirationalQuoteSource</span>! Still not convinced as to why you should make this park your next vacation destination? Well...
+    <span><strong>@Model.Park.ParkDescription</strong></span> Expect to pay
+    <span>$@Model.Park.EntryFee</span> to enter. And be mindful of the
+    <span>@Model.Park.NumberOfAnimalSpecies</span> animal species that call this place home!
+</div>
+<div id="buttonsDiv">
+    <form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="F" id="buttonFForm">
+        <input type="submit" value="Fahrenheit" class="tempTypeButton" id="buttonF"/>
+    </form>
+    <form asp-route-parkcode="@Model.Park.ParkCode" asp-route-unitpref="C" id="buttonCForm">
+        <input type="submit" value="Celcius"  class="tempTypeButton" id="buttonC"/>
+    </form>
+</div>
 <div id="forecast">
     <p>Today:</p>
     <img class="today_forecast"src="~/images/@(Model.Weather.ElementAt(0).Forecast).png" />
