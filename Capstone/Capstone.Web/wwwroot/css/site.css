@@ -348,8 +348,11 @@ a {
 }
 
 #surveyPageDiv {
-    background-color: #ffe6b3;
-    box-shadow: 5px 10px 20px #ffcc66 inset;
+    background-color: #b5f290;
+    border: 5px solid black;
+    border-radius: 20px;
+    box-shadow: 20px 20px 50px black;
+    opacity: .9;
 }
 
 #formGrid {
@@ -357,7 +360,13 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px dotted red;
+}
+
+#pleaseTakeIt {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 25px;
+    font-size: 2rem;
 }
 
 .formGroup {
@@ -365,7 +374,6 @@ a {
     width: 500px;
     display: flex;
     align-items: center;
-    align-content: center;
 }
 
 .firstSide {
@@ -382,13 +390,27 @@ a {
 }
 
 #allTheActivityStuff {
-    border: 5px solid black;
-    display: grid;
-    grid-template-areas: "one one two three four five";
-    text-align: center;
+    padding: 5px;
+    display: block;
+    align-items: center;
 }
 
 #activityLevelInstruction {
+    text-align: center;
+    margin: 5px;
+    text-decoration-style: double;
+}
+
+#activityOptionsDiv {
+    text-align: left;
+    margin: 5px;
+}
+
+.activityOption {
+    margin: 2px;
+}
+
+/*#activityLevelInstruction {
     grid-area: one;
 }
 
@@ -406,19 +428,21 @@ a {
 
 #extremelyActiveYo {
     grid-area: five;
-}
+}*/
 
 #submitB {
     grid-area: sub;
+    background: #ffeecc;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
-#surveyPageDiv {
-    background-color: #b5f290;
-    border: 5px solid black;
-    border-radius: 20px;
-    box-shadow: 20px 20px 50px black;
-    opacity: .9;
-}
 
 #survey_results {
     display: grid;
@@ -471,9 +495,9 @@ a {
 
 }
 
-/* Hide/rearrange for smaller screens */
+Hide/rearrange for smaller screens 
 @media screen and (max-width: 767px) {
-    /* Hide captions */
+    Hide captions 
     .carousel-caption {
         display: none;
     }
