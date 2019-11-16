@@ -6,35 +6,31 @@
     <p id="pleaseTakeIt"><em>If you could take a moment to complete our brief survey, we'd very much appreciate it!</em></p>
     <form method="post" asp-action="MakeNewSurvey" id="formGrid">
         @*<table>
-        <tr>
-            <td>*@
-        <div class="formGroup">
-            <label asp-for="@Model.ParkCode" class="firstSide">Favorite National Park</label>
-            @*</td>
-            <td>*@
-            <select asp-for="@Model.ParkCode" class="secondSide">
-                <option value="CVNP" id="park1">Cuyahoga Valley National Park</option>
-                <option value="ENP" id="park2">Everglades National Park</option>
-                <option value="GCNP" id="park3">Grand Canyon National Park</option>
-                <option value="GNP" id="park4">Glacier National Park</option>
-                <option value="GSMNP" id="park5">Great Smokey Mountains National Park</option>
-                <option value="GTNP" id="park6">Grand Teton National Park</option>
-                <option value="MRNP" id="park7">Mount Ranier National Park</option>
-                <option value="RMNP" id="park8">Rockey Mountain National Park</option>
-                <option value="YNP" id="park9">Yellowstone National Park</option>
-                <option value="YNP2" id="park10">Yosemite National Park</option>
-            </select>
-        </div>
-        @*</td>
-        </tr>
-        <tr>
-            <td>*@
-        <div class="formGroup">
-            <label asp-for="@Model.Email" class="firstSide">Your email:</label>
-            @*</td>
-            <td>*@
-            <input type="text" asp-for="@Model.Email" class="secondSide" />
-        </div>
+            <tr>
+                <td>*@
+                    <label asp-for="@Model.ParkCode" id="parkCodeLabel">Favorite National Park</label>
+                @*</td>
+                <td>*@
+                    <select asp-for="@Model.ParkCode" id="parkCode">
+                        <option value="CVNP" id="park1">Cuyahoga Valley National Park</option>
+                        <option value="ENP" id="park2">Everglades National Park</option>
+                        <option value="GCNP" id="park3">Grand Canyon National Park</option>
+                        <option value="GNP" id="park4">Glacier National Park</option>
+                        <option value="GSMNP" id="park5">Great Smokey Mountains National Park</option>
+                        <option value="GTNP" id="park6">Grand Teton National Park</option>
+                        <option value="MRNP" id="park7">Mount Ranier National Park</option>
+                        <option value="RMNP" id="park8">Rocky Mountain National Park</option>
+                        <option value="YNP" id="park9">Yellowstone National Park</option>
+                        <option value="YNP2" id="park10">Yosemite National Park</option>
+                    </select>
+                @*</td>
+            </tr>
+            <tr>
+                <td>*@
+                    <label asp-for="@Model.Email" id="YourEmailLabel">Your email:</label>
+                @*</td>
+                <td>*@
+                    <input type="text" asp-for="@Model.Email" id="YourEmailHere" />
             @*</tr>
             <tr>
                 <td>*@
