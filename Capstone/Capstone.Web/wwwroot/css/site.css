@@ -330,46 +330,45 @@ today_message{
     grid-column-gap: 20px;
 }
 
+#surveyPageDiv {
+    background-color: #ffe6b3;
+    box-shadow: 5px 10px 20px #ffcc66 inset;
+}
+
 #formGrid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        "favs favs . favsChoices favsChoices ." 
-        "emailL emailL . emailArea emailArea ." 
-        "resState resState . stateChoices stateChoices ." 
-        "act act act act act act" 
-        ". . sub sub . .";
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px dotted red;
 }
 
-
-#parkCodeLabel {
-    grid-area: favs;
+.formGroup {
+    padding: 5px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    align-content: center;
 }
 
-#parkCode {
-    grid-area: favsChoices;
+.firstSide {
+    padding: 0 5px;
+    text-align: right;
+    flex-grow: 1;
+    flex-basis: 100px;
 }
 
-#YourEmailLabel {
-    grid-area: emailL;
-}
-
-#YourEmailHere {
-    grid-area: emailArea;
-}
-
-#stateOfResLabel {
-    grid-area: resState;
-}
-
-#stateOfRes {
-    grid-area: stateChoices;
+.secondSide {
+    flex-grow: 2;
+    flex-basis: 200px;
+    background: #ffeecc;
 }
 
 #allTheActivityStuff {
-    grid-area: act;
+    border: 5px solid black;
     display: grid;
-    grid-template-areas: "one one two three four five"
+    grid-template-areas: "one one two three four five";
+    text-align: center;
 }
 
 #activityLevelInstruction {
