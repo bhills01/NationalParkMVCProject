@@ -32,5 +32,19 @@ namespace Capstone.Web.Models
 
             return Low;
         }
+
+        public Weather()
+        {
+
+        }
+
+        public Weather(string parkCode, int fiveDayForecast, double high, double low, string forecast)
+        {
+            ParkCode = parkCode;
+            FiveDayForecastValue = fiveDayForecast;
+            High = high;
+            Low = low;
+            Forecast = forecast;
+        }
     }
 }

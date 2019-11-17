@@ -22,6 +22,38 @@ namespace Capstone.Web.Models
         public string InspirationalQuoteSource { get; set; }
         public string ParkDescription { get; set; }
         public decimal EntryFee { get; set; }
+
+        public static explicit operator Park(string v)
+        {
+            throw new NotImplementedException();
+        }
+
         public int NumberOfAnimalSpecies { get; set; }
+
+        public Park()
+        {
+
+        }
+
+        public Park(string parkCode, string parkName, string state, int acreage, int elevation, int elevationFeet, double milesOfTrail, int numberOfCampites,
+    string climate, int yearFounded, int annualVisitorCount, string inspirationalQuote, string inspirationalQuoteSource, string parkDescription, decimal entryFee)
+        {
+            ParkCode = parkCode;
+            ParkName = parkName;
+            State = state;
+            Acreage = acreage;
+            Elevation = elevation;
+            ElevationFeet = elevationFeet;
+            MilesOfTrail = milesOfTrail;
+            NumberOfCampsites = numberOfCampites;
+            Climate = climate;
+            YearFounded = yearFounded;
+            AnnualVisitorCount = annualVisitorCount;
+            InspirationalQuote = inspirationalQuote;
+            InspirationalQuoteSource = inspirationalQuoteSource;
+            ParkDescription = parkDescription;
+            EntryFee = entryFee;
+        }
     }
+
 }
