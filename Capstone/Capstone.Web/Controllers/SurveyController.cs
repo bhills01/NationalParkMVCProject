@@ -26,6 +26,11 @@ namespace Capstone.Web.Controllers
         }
         public IActionResult MakeNewSurvey(Survey survey)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
             surveyDAO.SaveSurvey(survey);
             return RedirectToAction("SurveyResults");
         }
