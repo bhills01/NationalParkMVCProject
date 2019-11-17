@@ -186,7 +186,7 @@ a {
     }
 
 .parkPic {
-    width: 1200px; /* width of container */
+    width: 1140px; /* width of container */
     height: 500px; /* height of container */
     object-fit: cover;
     border: 5px solid black;
@@ -218,6 +218,16 @@ a {
     margin: 5px;
 }
 
+#detail_park {
+    font-family: 'Poor Richard';
+    font-size: 50px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 20px;
+    opacity: .9;
+    text-align: center;
+}
+
 #today_card {
     display: grid;
     grid-area: today_card;
@@ -229,11 +239,13 @@ a {
     background-color: white;
     box-shadow: 20px 20px 50px black;
     padding: 10px;
+    opacity: .9;
 }
 
 #today_message{
     grid-area: message;
     text-align: center;
+    font-size: 40px;
 }
 
 #today_image {
@@ -247,18 +259,41 @@ a {
         width: 100%;
     }
 
-#today_high{
+#today_high {
     grid-area: high;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px 10px 20px 10px;
+    background-color: #f5f00c;
+    font-weight: bolder;
 }
 #today_low {
     grid-area: low;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px 10px 20px 10px;
+    background-color: #84e6f5;
+    font-weight: bolder;
 }
 
 #conditions{
     text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
 }
-#forecast_detail{
+#forecast_detail {
     grid-area: forecast;
+    font-size: 18px;
+    text-align: center;
+    border: 5px solid red;
+    border-radius: 10px;
+    font-weight: bold;
 }
 
 
@@ -275,55 +310,63 @@ a {
     border-radius: 20px;
     background-color: white;
     box-shadow: 20px 20px 50px black;
+    opacity: .9;
 }
 
 #weather_card2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: "message message" "card_pic card_pic" "high low";
     grid-area: weather_card2;
     border: 5px solid black;
     border-radius: 20px;
     background-color: white;
     box-shadow: 20px 20px 50px black;
+    opacity: .9;
 }
 
 #weather_card3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: "message message" "card_pic card_pic" "high low";
     grid-area: weather_card3;
     border: 5px solid black;
     border-radius: 20px;
     background-color: white;
     box-shadow: 20px 20px 50px black;
+    opacity: .9;
 }
 
 #weather_card4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: "message message" "card_pic card_pic" "high low";
     grid-area: weather_card4;
     border: 5px solid black;
     border-radius: 20px;
     background-color: white;
-    opacity: .9;
     box-shadow: 20px 20px 50px black;
+    opacity: .9;
 }
 
 #day_message{
     text-align: center;
     grid-area: message;
+    font-size: 40px;
 }
 
 #high {
     grid-area: high;
-    display: table-cell;
     text-align: center;
     vertical-align: middle;
+    font-size: 25px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px 10px 40px 10px;
+    background-color: #f5f00c;
 }
 
 
@@ -332,6 +375,11 @@ a {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    font-size: 25px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 10px 10px 40px 10px;
+    background-color: #84e6f5;
 }
 
 #weather_image {
@@ -348,11 +396,12 @@ a {
 #forecast {
     display: grid;
     grid-template-columns: 25% 18% 18% 18% 18%;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "today_card weather_card1 weather_card2 weather_card3 weather_card4" "today_card weather_card1 weather_card2 weather_card3 weather_card4"
-    /*"today_card weather_card1 weather_card2 weather_card3 weather_card4"*/
-    "today_card . . . .";
-
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "today_card weather_card1 weather_card2 weather_card3 weather_card4"
+        "today_card weather_card1 weather_card2 weather_card3 weather_card4"
+        /*"today_card weather_card1 weather_card2 weather_card3 weather_card4"*/
+        "today_card . . . .";
     grid-column-gap: 20px;
 }
 
@@ -502,6 +551,20 @@ a {
     margin-bottom: 50px;
     color: floralwhite;
 
+}
+
+#joadley {
+    color: white;
+}
+
+#nav_home {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#nav_survey {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 Hide/rearrange for smaller screens 
