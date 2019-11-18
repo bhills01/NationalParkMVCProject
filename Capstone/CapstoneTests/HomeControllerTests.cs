@@ -1,12 +1,8 @@
 ﻿using Capstone.Web.Controllers;
-using Capstone.Web.DAL;
 using Capstone.Web.Models;
 using CapstoneTests.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CapstoneTests
 {

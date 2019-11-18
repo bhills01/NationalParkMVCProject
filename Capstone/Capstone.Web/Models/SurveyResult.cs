@@ -10,5 +10,17 @@ namespace Capstone.Web.Models
         public string ParkName { get; set; }
         public string ParkCode { get; set; }
         public int Votes { get; set; }
+
+        public SurveyResult()
+        {
+
+        }
+
+        public SurveyResult(string parkName, string parkCode, int votes)
+        {
+            ParkName = parkName;
+            ParkCode = parkCode;
+            Votes = votes;
+        }
     }
 }
