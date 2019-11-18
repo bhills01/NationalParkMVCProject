@@ -88,13 +88,13 @@
                         <input type="radio" asp-for="@Model.ActivityLevel" value="inactive" /><span asp-validation-for="ActivityLevel">Inactive</span>
                     </div>
                     <div id="sedentaryYo" class="activityOption">
-                        <input type="radio" asp-for="@Model.ActivityLevel" value="sedentary" /><span>Sedentary</span>
+                        <input type="radio" asp-for="@Model.ActivityLevel" value="sedentary" /><span asp-validation-for="ActivityLevel">Sedentary</span>
                     </div>
                     <div id="activeYo" class="activityOption">
-                        <input type="radio" asp-for="@Model.ActivityLevel" value="active" /><span>Active</span>
+                        <input type="radio" asp-for="@Model.ActivityLevel" value="active" /><span asp-validation-for="ActivityLevel">Active</span>
                     </div>
                     <div id="extremelyActiveYo" class="activityOption">
-                        <input type="radio" asp-for="@Model.ActivityLevel" value="extremely active" /><span>Extremely Active</span>
+                        <input type="radio" asp-for="@Model.ActivityLevel" value="extremely active" /><span asp-validation-for="ActivityLevel">Extremely Active</span>
                     </div>
                 </em>
             </div>
